@@ -3,6 +3,7 @@ from flask import Flask
 from flask_injector import FlaskInjector
 from environment_config import EnvironmentConfig
 from web.configuration import configure_web_route, configure_web_binding
+from use_cases.configuration import configure_use_case_binding
 
 template_folders = [
     './web/templates'
@@ -13,12 +14,15 @@ ROUTING_MODULES = [
 ]
 
 modules_list = [
-    configure_web_binding
+    configure_web_binding,
+    configure_use_case_binding
 ]
 
 
 def create_app(template_folders_list=template_folders, modules=modules_list):
     application = Flask(__name__)
+
+    application.config['SECRET_KEY'] = EnvironmentConfig.SECRET_KEY
 
     for routing in ROUTING_MODULES:
         routing(application)

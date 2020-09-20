@@ -1,0 +1,2 @@
+class InvalidEntryList(Exception):
+    pass

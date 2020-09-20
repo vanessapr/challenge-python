@@ -12,3 +12,4 @@ class EnvironmentConfig(IEnvironmentConfig):
 
     MODE_DEBUGGER = os.environ.get('MODE_DEBUGGER', False)
     PORT = os.environ.get('PORT', 5000)
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'biB2YW5lc3NhcHIuODVAZ21haWwuY29tOjEyMzQ1Ngo=')
