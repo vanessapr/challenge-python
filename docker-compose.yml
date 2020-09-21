@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    image: pythonflask
+    container_name: pythonflask
+    restart: unless-stopped
+    build: ./
+    ports:
+    - "80:80"
+    environment:
+      - FLASK_APP=app/app.py
+

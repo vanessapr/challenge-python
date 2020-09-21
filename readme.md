@@ -2,6 +2,10 @@
 This is an example using Flask
 
 ```shell script
-pip install -r requirements.txt
-python app.py
+docker-compose build
+docker-compose up
+```
+or
+```shell script
+docker-compose up --build
 ```
